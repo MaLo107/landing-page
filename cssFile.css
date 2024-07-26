@@ -1,0 +1,251 @@
+/* Reset some basic styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Hero image section */
+.hero-image {
+    background: url('Morning.jpg') no-repeat center center;
+    background-size: cover;
+    height: 60vh; /* Adjust height to keep some image visible */
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Main content area with gradient background */
+.main-content {
+    background: linear-gradient(to bottom, #87CEEB, #4682B4, #2E3B55, #1C1C1C);
+    padding: 20px;
+}
+
+/* About me section */
+.about-me-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.summary {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.profile-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%; /* Optional: rounded image */
+}
+
+/* Cards container */
+.cards-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+/* Card styling */
+.card {
+    width: 300px;
+    height: 300px;
+    perspective: 2000px;
+    cursor: pointer;
+    position: relative;
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 40px;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-front {
+    background: #f0f0f0;
+}
+
+.card-back {
+    background: #333;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.card:hover .card-front {
+    transform: rotateY(180deg);
+}
+
+.card:hover .card-back {
+    transform: rotateY(0deg);
+}
+
+.icon {
+    width: 90%;
+    height: 90%;
+}
+
+/* Make hyperlinks white and larger */
+.card-back a {
+    color: white;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+/* Timeline container */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.timeline-item {
+    margin: 20px 0;
+    padding-left: 40px;
+    position: relative;
+}
+
+.timeline-date {
+    position: absolute;
+    left: 0;
+    width: 30px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.timeline-content {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+}
+
+.timeline-content img {
+    width: 100%;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+/* Shaking buttons */
+.projects {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.shake {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* Interactive section styling */
+.interactive-section {
+    padding: 20px;
+    text-align: center;
+    background: #1C1C1C; /* Dark background for space theme */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40vh; /* Adjust height for visual balance */
+}
+
+.interactive-text {
+    font-size: 2em; /* Large font size */
+    font-family: 'Courier New', Courier, monospace; /* Computer science font */
+    color: white; /* White text for space theme */
+}
+
+.hidden-word {
+    color: rgba(255, 255, 255, 0); /* Start fully transparent */
+    border-bottom: 1px dashed white;
+    cursor: pointer;
+    transition: color 0.5s ease;
+    user-select: none; /* Prevent text selection */
+}
+
+/* Timer styling */
+.timer {
+    margin-top: 20px;
+    font-size: 2em;
+    color: white;
+    font-family: 'Courier New', Courier, monospace; /* Computer science font */
+}
+.confetti {
+    position: absolute;
+    top: -50px;
+    width: 10px;
+    height: 10px;
+    background: #FFD700; /* Gold color for confetti */
+    animation: fall 3s linear;
+    z-index: 10;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(200px);
+        opacity: 0;
+    }
+}
