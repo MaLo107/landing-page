@@ -75,4 +75,20 @@ document.addEventListener('DOMContentLoaded', () => {
             handleClick(opportunity, opportunityClicks);
         }
     });
+
+    const sourceText = `Hey guys! I'm Mauricio, an upcoming fourth year at UVA! I am a passionate CS student and developer with a keen interest in AI and software engineering. I enjoy creating innovative solutions to complex problems and always strive to learn and grow in my field through experiences, internships, or personal projects.I am currently working on two projects, 'SchedPro' and 'EmissionWise', two platforms that I hope to grow and enhance as time goes on (Both links at the bottom are currently under construction!).Welcome to my personal landing page where you can learn about and connect with me. Hope to meet as many of you as I can!`;
+
+    let i = 0;
+    const speed = 50;  // Speed of typing, in milliseconds
+    const codeElement = document.getElementById('typing-code');
+
+    function typeWriter() {
+        if (i < sourceText.length) {
+            codeElement.textContent += sourceText.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+
+    typeWriter();  // Initialize the typing effect
 });

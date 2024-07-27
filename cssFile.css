@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;700&display=swap');
+
 /* Reset some basic styles */
 body, html {
     margin: 0;
@@ -6,34 +8,87 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
-/* Hero image section */
+/* Main content area with gradient background */
+.main-content {
+    background: linear-gradient(to bottom, #87CEEB, #4682B4, #2E3B55, #1C1C1C); /* Adjust the colors as needed to fit your design */
+    padding: 20px;
+    color: white; /* Optional: changes the text color to white for better readability on dark backgrounds */
+}
+
+/* About Me Section */
+.about-me-section {
+    display: flex;
+    justify-content: space-around; /* Distributes space evenly around items */
+    align-items: center;
+    width: 100%; /* Ensures the container takes full width */
+}
+
+.profile .profile-image {
+    width: 150px; /* Define width for image */
+    height: 150px; /* Maintain aspect ratio */
+    border-radius: 50%; /* Circular image */
+    object-fit: cover; /* Ensures the image covers the defined area without distortion */
+    margin-right: 20px; /* Space between image and text */
+}
+
+.code-editor {
+    background-color: #282a36;
+    color: #f8f8f2;
+    font-family: 'Roboto Flex', sans-serif; /* Using Roboto Flex as per your choice */
+    padding: 20px;
+    border-radius: 8px;
+    flex-grow: 1; /* Allows the code editor to take up remaining space */
+    margin-left: 20px; /*Ensures some space between the image and the code editor */
+    white-space: pre-wrap;
+    overflow-y: auto;
+    text-align: left;  /*Ensures text aligns to the left */
+    max-height: 300px; /* Optional: Limits the height of the code editor */
+}   
+
 .hero-image {
-    background: url('Morning.jpg') no-repeat center center;
-    background-size: cover;
-    height: 60vh; /* Adjust height to keep some image visible */
-    position: relative;
-    color: white;
+    background: url('Morning.jpg') no-repeat center center / cover; /* Ensures the image covers the entire area */
+    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
+}
+
+.hero-image h1 {
+    font-family: 'Roboto Flex', sans-serif; /* Ensures your heading uses Roboto Flex */
+    font-size: 2.5em; /* Adjust the font size as needed */
+}
+
+.profile h1, .profile img {
     text-align: center;
 }
-
-/* Main content area with gradient background */
-.main-content {
-    background: linear-gradient(to bottom, #87CEEB, #4682B4, #2E3B55, #1C1C1C);
+/* Interactive quote box styles */
+.interactive-section {
+    background: #1C1C1C;
+    color: #33C3F0;
+    font-family: 'Courier New', monospace;
     padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-/* About me section */
-.about-me-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
-    border-radius: 10px;
-    margin-bottom: 20px;
+.interactive-text {
+    color: #7FFF00;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.hidden-word {
+    color: rgba(255, 255, 255, 0);
+    transition: color 0.5s ease;
+    user-select: none;
+}
+
+.hidden-word:hover, .hidden-word:active {
+    color: #FFFF00;
 }
 
 .summary {
@@ -135,18 +190,18 @@ body, html {
 .timeline-date {
     position: absolute;
     left: 0;
-    width: 30px;
+    width: 40px;
     text-align: center;
     font-size: 1.2em;
     color: #333;
     background: #fff;
     border: 1px solid #ccc;
-    border-radius: 50%;
+    border-radius: 60%;
     padding: 10px;
 }
 
 .timeline-content {
-    background: #f9f9f9;
+    background: 'black';
     padding: 20px;
     border-radius: 6px;
     border: 1px solid #ddd;
